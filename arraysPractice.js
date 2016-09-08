@@ -86,6 +86,8 @@ function evenFinder(arr) {
     return newArray;
 }
 
+//GG: We could also use the .filter() function to filter out the odd values.
+
 //Next problem
 
 
@@ -159,6 +161,8 @@ function reverse(arr) {
 // function reverse(str) {
 //     return str.split('').reverse('').join('');
 // }
+//GG: This commented out function above is the simpliest method of doing this. 
+//GG: However the way you did it also works well and uses just vanilla which is nice.
 
 //Next Problem
 
@@ -187,6 +191,9 @@ function removeItem(myGroceryList, removedItem) {
     if(!myGroceryList){
         return [];
     }
+    //GG: We could also write this as:
+    //GG: myGroceryList = myGroceryList || [];
+    //GG: This is a little trick that basically says if myGroceryList is truthy, then set the variable to that, if it isn't then set it to an empty array.
 
     myGroceryList.forEach(function(item, index){
         if(item === removedItem) {
@@ -242,6 +249,7 @@ function addTen(numbers) {
         return parseInt(item) + 10;
     });
 }
+//GG: .map() is so handy right?
 
 console.log(addTen(numbers));
 
@@ -270,6 +278,15 @@ function longer(arr1, arr2) {
     } else {
         return arr2;
     }
+    //GG: We actually don't need an else statement here.  Either the first if statement will evaluate to true and thus exit the function returning arr1, or it will evaluate to false and move to the next piece of code, which would be return false. The else statement in this case is unecessary.
+    //GG: That would look like:
+    //GG:
+    /*
+      if (arr1 > arr2) { //If this is true then we return arr1 and exit the function.
+        return arr1; 
+      } 
+      return arr2; //If the above if statement evaluates false then we exit the function and return arr2. 
+    */
 }
 // console.log(longer(arr1, arr2));
 
